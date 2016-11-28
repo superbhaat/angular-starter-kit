@@ -24,7 +24,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="Angular Starter Kit">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Angular Starter Kit</title>
+  <title>My name is raman</title>
 
   <!-- Disable tap highlight on IE -->
   <meta name="msapplication-tap-highlight" content="no">
@@ -76,14 +76,14 @@
   <page-header></page-header>
 
   <!-- Main view for templates -->
-  <div ng-view class="page"></div>
+  <div ui-view class="page"></div>
 
   <page-footer></page-footer>
 
   <!-- build:main(./.tmp) js/main.min.js -->
     <!-- bower:js -->
     <script src="../bower_components/angular/angular.js"></script>
-    <script src="../bower_components/angular-route/angular-route.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="../bower_components/angular-animate/angular-animate.js"></script>
     <script src="../bower_components/angular-aria/angular-aria.js"></script>
     <script src="../bower_components/angular-messages/angular-messages.js"></script>
@@ -96,6 +96,7 @@
     <script src="app/page-footer/page-footer.directive.js"></script>
 
     <script src="app/home/home.controller.js"></script>
+    <script src="app/contact/contact.controller.js"></script>
 
     <!-- build:templates -->
       <!-- minify and concatenate all template files -->
@@ -119,6 +120,6 @@
       angular.bootstrap(document, ['app']);
     });
   </script>
-  <!-- Built with love by @andreasonny83 -->
+  <!-- Built with love by @raman -->
 </body>
 </html>

@@ -13,7 +13,7 @@
 
   angular
     .module('app', [
-      'ngRoute',
+      'ui.router',
       'ngAnimate',
       'ngMaterial'
     ])
@@ -22,7 +22,7 @@
 
   // safe dependency injection
   // this prevents minification issues
-  config.$inject = ['$routeProvider', '$locationProvider'];
+  config.$inject = ['$stateProvider', '$locationProvider'];
   // run.$inject = [];
 
   /**
@@ -32,17 +32,30 @@
    * into separate file
    *
    */
-  function config($routeProvider, $locationProvider) {
+  function config($stateProvider, $locationProvider) {
     // routes
-    $routeProvider
-      .when('/', {
-        templateUrl: 'app/home/home.html',
-        controller: 'HomeController',
-        controllerAs: 'homeCtrl'
+    $stateProvider
+      .state('home', {
+          url: '/',
+          templateUrl: 'app/home/home.html',
+          controller: 'HomeController',
+          controllerAs: 'homeCtrl'
       })
-      .otherwise({
-        redirectTo: '/404'
+      .state('contatus', {
+          url: '/contact-us',
+          templateUrl: 'app/contact/contact.html',
+          controller: 'ContactController',
+          controllerAs: 'contactCtrl'
+      })
+      .state("404", {
+          url: "*path",
+          templateUrl: "404.html",
+          redirectTo:'/404'
       });
+
+      /*.otherwise({
+        redirectTo: '/404'
+      });*/
 
     // use the HTML5 History API
     $locationProvider.html5Mode(true);
